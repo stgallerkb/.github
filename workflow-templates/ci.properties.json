@@ -1,0 +1,11 @@
+{
+    "name": "SGKB CI Workflow",
+    "description": "SGKB CI starter workflow.",
+    "iconName": "example-icon",
+    "categories": [
+        "Go"
+    ],
+    "filePatterns": [
+        "package.json$"
+    ]
+}
