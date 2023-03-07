@@ -1,0 +1,52 @@
+name: "CodeQL"
+
+on:
+  push:
+    branches: [$default-branch, $protected-branches]
+  pull_request:
+    branches: [$default-branch]
+  schedule:
+    - cron: $cron-weekly
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [$detected-codeql-languages]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: ${{ matrix.language }}
+          config-file: "stgallerkb/.github-private/security/codeql-config.yml@main"
+          external-repo-token: ${{ secrets.ORG_READ_ONLY }}
+        env:
+          AZURE_PACKAGING_PAT: ${{ secrets.AZURE_PACKAGING_PAT }}
+          AZURE_MAVEN_REGISTRY: ${{ secrets.AZURE_MAVEN_REGISTRY }}
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v2
+
+      - name: Dependency Review
+        if: github.event.pull_request
+        uses: actions/dependency-review-action@v3
+        with:
+          config-file: "stgallerkb/.github-private/security/dependency-review-config.yml@main"
+          external-repo-token: ${{ secrets.ORG_READ_ONLY }}
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
+        with:
+          category: "/language:${{matrix.language}}"
