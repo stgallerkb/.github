@@ -1,18 +1,6 @@
 {
   "name": "CodeQL Analysis",
-  "description": "Security analysis from GitHub for C, C++, C#, Go, Java, JavaScript, TypeScript, Python, Ruby and Kotlin developers.",
+  "description": "CodeQL workflow for analyzing code on push, pull request, and schedule triggers.",
   "iconName": "octicon shield",
-  "categories": [
-    "Code Scanning",
-    "C",
-    "C++",
-    "C#",
-    "Go",
-    "Java",
-    "JavaScript",
-    "TypeScript",
-    "Python",
-    "Ruby",
-    "Kotlin"
-  ]
+  "categories": ["automation"]
 }

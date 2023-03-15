@@ -1,6 +1,6 @@
 {
   "name": "Deployment",
-  "description": "The Deployment workflow triggers when the Integration workflow completes and deploys code changes to various environments based on the branch name and target specified in the matrix.",
+  "description": "Deployment workflow deploying to various environments on main and develop branches.",
   "iconName": "octicon rocket",
   "categories": ["deployment"]
 }
