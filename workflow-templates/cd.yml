@@ -2,7 +2,7 @@ name: Deployment
 on:
   workflow_run:
     workflows: ["Integration"]
-    branches: [main, develop]
+    branches: [$default-branch, $protected-branches]
     types:
       - completed
 
