@@ -1,0 +1,36 @@
+name: Deployment
+on:
+  workflow_run:
+    workflows: ["Integration"]
+    branches: [main, develop]
+    types:
+      - completed
+
+jobs:
+  deploy-from-develop:
+    name: Deploy develop to ${{ matrix.target }}
+    if: github.event.workflow_run.head_branch == 'develop'
+
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [azure, integration, test]
+
+    uses: stgallerkb/workflows/.github/workflows/k8s-deploy.yml@v1
+    secrets: inherit
+    with:
+      environment: ${{ matrix.target }}
+
+  deploy-from-main:
+    name: Deploy main to ${{ matrix.target }}
+    if: github.event.workflow_run.head_branch == 'main'
+
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [azure, integration, test, production]
+
+    uses: stgallerkb/workflows/.github/workflows/k8s-deploy.yml@v1
+    secrets: inherit
+    with:
+      environment: ${{ matrix.target }}
