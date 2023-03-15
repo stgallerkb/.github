@@ -1,0 +1,18 @@
+name: "Manual Deployment"
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Environment"
+        required: true
+        default: "azure"
+        type: environment
+
+jobs:
+  deploy:
+    name: Deployment
+    uses: stgallerkb/workflows/.github/workflows/k8s-deploy.yml@v1
+    secrets: inherit
+    with:
+      environment: ${{ inputs.environment }}

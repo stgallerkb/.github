@@ -1,0 +1,6 @@
+{
+  "name": "Manual Deployment",
+  "description": "Manual Deployment workflow dispatching a deployment for a specified environment.",
+  "iconName": "octicon people",
+  "categories": ["deployment"]
+}
