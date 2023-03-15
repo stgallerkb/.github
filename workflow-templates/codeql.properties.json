@@ -1,5 +1,5 @@
 {
-  "name": "CodeQL Analysis",
+  "name": "CodeQL",
   "description": "CodeQL workflow for analyzing code on push, pull request, and schedule triggers.",
   "iconName": "octicon shield",
   "categories": ["automation"]
