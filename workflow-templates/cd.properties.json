@@ -1,6 +1,6 @@
 {
-  "name": "Deployment",
-  "description": "Deployment workflow deploying to various environments on main and develop branches.",
-  "iconName": "octicon rocket",
-  "categories": ["deployment"]
+    "name": "Deployment",
+    "description": "Deployment workflow deploying to various environments on main and develop branches.",
+    "iconName": "octicon rocket",
+    "categories": ["deployment"]
 }

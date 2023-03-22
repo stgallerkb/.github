@@ -1,10 +1,9 @@
 name: Integration
 on: [push, workflow_dispatch]
-  
 
 jobs:
   ci:
-    # Check Prerequisites     https://github.com/stgallerkb/workflows#prerequisites 
+    # Check Prerequisites     https://github.com/stgallerkb/workflows#prerequisites
     # See additonal options   https://github.com/stgallerkb/workflows#options-1
     uses: stgallerkb/workflows/.github/workflows/java-react-ci.yml@v1
     secrets: inherit
