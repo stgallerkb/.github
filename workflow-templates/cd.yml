@@ -8,7 +8,7 @@ on:
 
 jobs:
   deploy-from-develop:
-    name: Deploy develop to ${{ matrix.target }}
+    name: Deploy 'develop' to ${{ matrix.target }}
     if: github.event.workflow_run.head_branch == 'develop'
 
     strategy:
@@ -16,13 +16,14 @@ jobs:
       matrix:
         target: [azure, integration, test]
 
+    # check documentation via https://github.com/stgallerkb/workflows/blob/main/docs/k8s-deploy.md
     uses: stgallerkb/workflows/.github/workflows/k8s-deploy.yml@v1
     secrets: inherit
     with:
       environment: ${{ matrix.target }}
 
   deploy-from-main:
-    name: Deploy main to ${{ matrix.target }}
+    name: Deploy 'main' to ${{ matrix.target }}
     if: github.event.workflow_run.head_branch == 'main'
 
     strategy:
@@ -30,6 +31,7 @@ jobs:
       matrix:
         target: [azure, integration, test, production]
 
+    # check documentation via https://github.com/stgallerkb/workflows/blob/main/docs/k8s-deploy.md
     uses: stgallerkb/workflows/.github/workflows/k8s-deploy.yml@v1
     secrets: inherit
     with:

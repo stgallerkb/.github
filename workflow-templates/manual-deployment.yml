@@ -12,6 +12,7 @@ on:
 jobs:
   deploy:
     name: Deployment
+    # check documentation via https://github.com/stgallerkb/workflows/blob/main/docs/k8s-deploy.md
     uses: stgallerkb/workflows/.github/workflows/k8s-deploy.yml@v1
     secrets: inherit
     with:

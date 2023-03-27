@@ -1,3 +1,4 @@
+# Documentation of CodeQL - https://codeql.github.com/
 name: "CodeQL"
 
 on:
@@ -30,6 +31,8 @@ jobs:
         uses: github/codeql-action/init@v2
         with:
           languages: ${{ matrix.language }}
+          # corporate security settings must not be changed
+          # https://github.com/stgallerkb/.github-private/blob/main/security/codeql-config.yml
           config-file: "stgallerkb/.github-private/security/codeql-config.yml@main"
           external-repo-token: ${{ secrets.ORG_READ_ONLY }}
         env:
@@ -43,6 +46,8 @@ jobs:
         if: github.event.pull_request
         uses: actions/dependency-review-action@v3
         with:
+          # corporate dependency security and licensing settings must not be changed
+          # https://github.com/stgallerkb/.github-private/blob/main/security/dependency-review-config.yml
           config-file: "stgallerkb/.github-private/security/dependency-review-config.yml@main"
           external-repo-token: ${{ secrets.ORG_READ_ONLY }}
 
