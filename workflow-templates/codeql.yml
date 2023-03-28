@@ -35,12 +35,12 @@ jobs:
           # https://github.com/stgallerkb/.github-private/blob/main/security/codeql-config.yml
           config-file: "stgallerkb/.github-private/security/codeql-config.yml@main"
           external-repository-token: ${{ secrets.ORG_READ_ONLY }}
-        env:
-          AZURE_PACKAGING_PAT: ${{ secrets.AZURE_PACKAGING_PAT }}
-          AZURE_MAVEN_REGISTRY: ${{ secrets.AZURE_MAVEN_REGISTRY }}
 
       - name: Autobuild
         uses: github/codeql-action/autobuild@v2
+        env:
+          AZURE_PACKAGING_PAT: ${{ secrets.AZURE_PACKAGING_PAT }}
+          AZURE_MAVEN_REGISTRY: ${{ secrets.AZURE_MAVEN_REGISTRY }}
 
       - name: Dependency Review
         if: github.event.pull_request
