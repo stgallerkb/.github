@@ -2,5 +2,5 @@
     "name": "Java + React CI",
     "description": "Basic integration workflow for applications with a Java backend and a React frontend",
     "iconName": "octicon package",
-    "categories": ["ci"]
+    "categories": ["continuous-integration", "Java", "React"]
 }
