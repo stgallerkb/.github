@@ -27,6 +27,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Remove this step for non-java projects
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: corretto
+          java-version-file: ".java-version"
+          cache: gradle
+
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
         with:
