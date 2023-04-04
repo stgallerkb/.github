@@ -1,3 +1,4 @@
+# This workflow is based on the CodeQL (codeql.yml) Starter Workflow
 # Documentation of CodeQL - https://codeql.github.com/
 name: "CodeQL"
 

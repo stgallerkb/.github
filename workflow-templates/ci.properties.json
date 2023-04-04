@@ -1,0 +1,6 @@
+{
+  "name": "Integration",
+  "description": "Basic integration workflow for applications with a React frontend and an optional Java backend",
+  "iconName": "octicon package",
+  "categories": ["continuous-integration", "React", "Java"]
+}

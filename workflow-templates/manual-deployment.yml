@@ -1,3 +1,4 @@
+# This workflow is based on the Manual Deployment (manual-deployment.yml) Starter Workflow
 name: "Manual Deployment"
 
 on:
