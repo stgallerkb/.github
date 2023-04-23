@@ -1,4 +1,4 @@
-# This workflow is based on the Integration (ci.yml) Starter Workflow
+# This workflow is based on the Integration (stgallerkb/.github/workflow-templates/ci.yml) Starter Workflow
 name: Integration
 on: [push, workflow_dispatch]
 

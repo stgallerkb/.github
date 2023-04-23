@@ -1,4 +1,4 @@
-# This workflow is based on the Manual Deployment (manual-deployment.yml) Starter Workflow
+# This workflow is based on the Manual Deployment (stgallerkb/.github/workflow-templates/manual-deployment.yml) Starter Workflow
 name: "Manual Deployment"
 
 on:

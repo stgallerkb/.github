@@ -1,4 +1,4 @@
-# This workflow is based on the Deployment (cd.yml) Starter Workflow
+# This workflow is based on the Deployment (stgallerkb/.github/workflow-templates/cd.yml) Starter Workflow
 name: Deployment
 on:
   workflow_run:
